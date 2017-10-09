@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+/*
+Theme Name:     Cross2014 (cross.u-tokyo.ac.jp)
+Author:         kazuma1989 <https://github.com/kazuma1989/>
+Description:    …
+Version:        1.0.0
+Text Domain:    cross2014
+*/
+
+/*
+M+Web FONTS Subsetter
+http://mplus.font-face.jp/
+*/
+
+@font-face {
+    font-family: "M+ 1c bold";
+    src: url("font/mplus-1c-bold-sub.woff") format("woff");
+}
+
+@font-face {
+    font-family: "M+ 1c light";
+    src: url("font/mplus-1c-light-sub.woff") format("woff");
+}
+
+.cr_site_logo {
+    display: inline-block;
+    line-height: 1;
+    vertical-align: bottom;
+    white-space: nowrap;
+    color: #444;
+}
+
+.cr_site_logo__main {
+    font-family: "M+ 1c bold", sans-serif;
+    font-size: 19px;
+    margin: 1px 0 5px;
+}
+
+.cr_site_logo__main_small {
+    font-size: 16px;
+}
+
+.cr_site_logo__sub {
+    font-family: "M+ 1c light", sans-serif;
+    font-size: 10px;
+}
+
+.cr_site_logo--theme_dark {
+    color: silver;
+}
+
+.cr_site_logo--theme_dark .cr_site_logo__main {
+    /* webkit only: gradation text color */
+    background-image: -webkit-linear-gradient(white, dimgray);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

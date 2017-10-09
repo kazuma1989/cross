@@ -1,0 +1,1 @@
+<?php cr_template__part('article_loop') ?>
