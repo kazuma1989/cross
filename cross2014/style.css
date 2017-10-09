@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 /*
-Theme Name:     Cross2014 (cross.t.u-tokyo.ac.jp)
-Author:         kazuma1989 <https://github.com/kazuma1989/>
-Description:    …
-Version:        1.0.0
-Text Domain:    cross2014
+Theme Name:  Cross2014 (cross.t.u-tokyo.ac.jp)
+Author:      kazuma1989 <https://github.com/kazuma1989/>
+Description: …
+Version:     1.0.0
+Text Domain: cross2014
 */
 
 /*
@@ -55,4 +55,9 @@ http://mplus.font-face.jp/
     background-image: -webkit-linear-gradient(white, dimgray);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+#header {
+    position: relative;
+    z-index: 10;
 }
