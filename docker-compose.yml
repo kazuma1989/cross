@@ -1,0 +1,48 @@
+# バージョン 3.3 記法を使う
+version: "3.3"
+
+# コンテナ定義
+services:
+
+  # WordPress（CMS 本体）
+  wordpress:
+    # 公式イメージを使う
+    # さくらインターネットで使えるバージョンに統一
+    image: wordpress:4.8.2-php7.1-apache
+
+    # データベースとリンクする
+    # db というホスト名で接続できる
+    # <host>:<container>
+    links:
+      - mysql:db
+
+    # ポートを公開する
+    # WordPress はポート 80 を前提とした作り (f*ck) なので 80 を指定
+    # <host>:<container>
+    ports:
+      - 80:80
+
+  # MySQL データベース
+  mysql:
+    # 公式イメージを使う
+    # さくらインターネットで使えるバージョンに統一
+    image: mysql:5.5.57
+
+    # 設定を環境変数として渡す
+    environment:
+      # 管理用 DB 以外に WordPress 用の DB を作成する
+      - MYSQL_DATABASE=wordpress
+
+      # 秘密の値はこのファイルと同じ階層に .env ファイルを作成し
+      # key=value
+      # の形式で記載する
+      - MYSQL_ROOT_PASSWORD
+
+  # データベース管理画面
+  # 通常時は使わないが、特殊なメンテナンスやデータ移行時に使う
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:edge-4.8
+    links:
+      - mysql:db
+    ports:
+      - 8080:8080
