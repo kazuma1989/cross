@@ -9,7 +9,7 @@ declare(strict_types=1);
  */
 function cr_nav_menu__item_list(string $menu_name): array
 {
-    // Get non-nested memu items which WordPress gives.
+    // Get non-nested menu items which WordPress gives.
     $raw_item_list = wp_get_nav_menu_items($menu_name) ?: [];
 
     $item_list = [];
@@ -44,4 +44,31 @@ function cr_nav_menu__item_list(string $menu_name): array
 
 function cr_template__part()
 {
+}
+
+/**
+ * @return the template type
+ */
+function cr_get_template_type(): string
+{
+    if (is_404()) {
+        return '404';
+    }
+    if (is_search()) {
+        return 'search';
+    }
+    if (is_home()) {
+        return 'home';
+    }
+    if (is_single()) {
+        return 'single';
+    }
+    if (is_page()) {
+        return 'page';
+    }
+    if (is_archive()) {
+        return 'archive';
+    }
+
+    return '';
 }

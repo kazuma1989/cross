@@ -13,7 +13,7 @@
         </header>
 
         <main id="body" class="row span-24 center">
-            <?php get_template_part('template/main') ?>
+            <?php get_template_part('template/main', cr_get_template_type()) ?>
         </main>
 
         <footer id="footer">
