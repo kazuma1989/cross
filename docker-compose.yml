@@ -22,6 +22,11 @@ services:
     ports:
       - 80:80
 
+    # テーマを直接編集するため、ボリュームとして設定する
+    # <host>:<container>
+    volumes:
+      - ./cross2014:/var/www/html/wp-content/themes/cross2014
+
   # MySQL データベース
   mysql:
     # 公式イメージを使う
@@ -38,6 +43,10 @@ services:
       # の形式で記載する
       - MYSQL_ROOT_PASSWORD
 
+    # データ内容を保持する
+    volumes:
+      - ./mysql:/var/lib/mysql
+
   # データベース管理画面
   # 通常時は使わないが、特殊なメンテナンスやデータ移行時に使う
   phpmyadmin:
@@ -45,4 +54,4 @@ services:
     links:
       - mysql:db
     ports:
-      - 8080:8080
+      - 8080:80
