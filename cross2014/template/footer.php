@@ -11,6 +11,6 @@
 
 <div id="footer-external-links">
     <ul class="span-24 center ul-horizontal text-center">
-        <?php cr_nav_menu('university') ?>
+        <?php cr_nav_menu('bottom') ?>
     </ul>
 </div>

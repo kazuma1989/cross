@@ -3,12 +3,12 @@
 declare(strict_types=1);
 
 /**
- * @param $menu_name
+ * @param $theme_location
  */
-function cr_nav_menu(string $menu_name): void
+function cr_nav_menu(string $theme_location): void
 {
     wp_nav_menu([
-        'menu' => $menu_name,
+        'theme_location' => $theme_location,
         'container' => '',
         'items_wrap' => '%3$s',
     ]);

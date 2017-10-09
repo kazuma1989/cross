@@ -17,7 +17,7 @@
     <!-- アイコンナビ -->
     <nav id="icon-nav" class="right span-9">
         <ul id="icon-nav-ul" class="ul-horizontal text-left margin-bottom-0">
-            <?php cr_nav_menu('icon-nav') ?>
+            <?php cr_nav_menu('upper-right') ?>
 <!-- 
             <li                         ><a href="/recruitment" ><span class="icomoon-quill"></span> 学生・研究員の方へ</a></li>
             <li style="margin-right: 0" ><a href="/contact"     ><span class="icomoon-phone"></span> 連絡先／アクセス</a></li> -->

@@ -3,15 +3,12 @@
 declare(strict_types=1);
 
 add_action('after_setup_theme', function () {
-    add_theme_support('menus');
-
-    // add_theme_support('custom-header', [
-    //     'flex-width' => true,
-    //     'width' => 370,
-    //     'flex-width' => true,
-    //     'height' => 294,
-    //     'default-image' => get_theme_file_uri('css/img/logo/door0.png'),
-    // ]);
+    register_nav_menus([
+        'upper-right' => '右上',
+        'header' => 'ヘッダー',
+        'footer' => 'フッター',
+        'bottom' => '下',
+    ]);
 
     add_theme_support('post-thumbnails');
 
