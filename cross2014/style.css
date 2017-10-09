@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /*
-Theme Name:     Cross2014 (cross.u-tokyo.ac.jp)
+Theme Name:     Cross2014 (cross.t.u-tokyo.ac.jp)
 Author:         kazuma1989 <https://github.com/kazuma1989/>
 Description:    …
 Version:        1.0.0
@@ -15,12 +15,12 @@ http://mplus.font-face.jp/
 
 @font-face {
     font-family: "M+ 1c bold";
-    src: url("font/mplus-1c-bold-sub.woff") format("woff");
+    src: url("css/font/mplus-1c-bold-sub.woff") format("woff");
 }
 
 @font-face {
     font-family: "M+ 1c light";
-    src: url("font/mplus-1c-light-sub.woff") format("woff");
+    src: url("css/font/mplus-1c-light-sub.woff") format("woff");
 }
 
 .cr_site_logo {
