@@ -17,17 +17,17 @@
     <!-- アイコンナビ -->
     <nav id="icon-nav" class="right span-9">
         <ul id="icon-nav-ul" class="ul-horizontal text-left margin-bottom-0">
-            <!-- <?php foreach (cr_nav_menu__item_list('icon-nav') as $item): ?>
+            <?php foreach (cr_nav_menu__item_list('icon-nav') as $item): ?>
             <li>
                 <a href="<?= $item->url ?>" target="<?= $item->target ?>">
                         <i class="<?= $item->css_class ?>" aria-hidden="true"></i>
                         <?= $item->title ?>
                     </a>
             </li>
-            <?php endforeach ?> -->
-
+            <?php endforeach ?>
+<!-- 
             <li                         ><a href="/recruitment" ><span class="icomoon-quill"></span> 学生・研究員の方へ</a></li>
-            <li style="margin-right: 0" ><a href="/contact"     ><span class="icomoon-phone"></span> 連絡先／アクセス</a></li>
+            <li style="margin-right: 0" ><a href="/contact"     ><span class="icomoon-phone"></span> 連絡先／アクセス</a></li> -->
         </ul>
     </nav>
 </div>

@@ -42,10 +42,6 @@ function cr_nav_menu__item_list(string $menu_name): array
     return $item_list;
 }
 
-function cr_template__part()
-{
-}
-
 /**
  * @return the template type
  */
