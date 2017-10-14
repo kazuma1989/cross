@@ -17,7 +17,7 @@ services:
       - mysql:db
 
     # ポートを公開する
-    # WordPress はポート 80 を前提とした作り (f*ck) なので 80 を指定
+    # WordPress はポート 80 を前提とした作りのようなので 80 を指定
     # <host>:<container>
     ports:
       - 80:80
@@ -26,6 +26,7 @@ services:
     # <host>:<container>
     volumes:
       - ./cross2014:/var/www/html/wp-content/themes/cross2014
+      - ./cross2018:/var/www/html/wp-content/themes/cross2018
 
   # MySQL データベース
   mysql:
