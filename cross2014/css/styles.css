@@ -33,6 +33,15 @@ h5,
 h6 {
     font-weight: bold;
 }
+    h1 > a[href],
+    h2 > a[href],
+    h3 > a[href],
+    h4 > a[href],
+    h5 > a[href],
+    h6 > a[href] {
+        color: inherit;
+        text-decoration: inherit;
+    }
 h1 {
     margin-bottom: 0.5em;
 }
