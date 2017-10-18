@@ -233,10 +233,10 @@ a[href] .a-description {
     margin-bottom: 0;
     margin-left: 0;
 }
-.ul-divided > li:before,
-.ol-divided > li:before,
-.dl-divided > dt:before,
-.dl-divided > dd:before {
+.ul-divided > li:not(:first-of-type):before,
+.ol-divided > li:not(:first-of-type):before,
+.dl-divided > dt:not(:first-of-type):before,
+.dl-divided > dd:not(:first-of-type):before {
     content: attr(data-divider);
     position: relative;
         right: 10px;

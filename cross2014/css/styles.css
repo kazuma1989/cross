@@ -161,10 +161,11 @@ samp {
 html {
     margin: 0;
     padding: 0;
-}
-body {
+
     background-color: DimGray;
     background-image: url('img/bg/linen-dimgray_256x128.jpg');
+}
+body {
     font-family:
         "Century Gothic",
         "Verdana",
@@ -180,14 +181,10 @@ body {
         "ＭＳ Ｐゴシック",
         "MS PGothic",
         sans-serif;
-    margin: 0;
     padding: 0;
-}
-#main {
+
     background-color: White;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     margin: 0 auto;
-    max-width: 1440px;
     min-width: 960px;
 }
 
@@ -290,6 +287,9 @@ body {
     color: Silver;
     padding: 0.6em 0 4em;
     text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+
+    background-color: DimGray;
+    background-image: url('img/bg/linen-dimgray_256x128.jpg');
 }
 
 
