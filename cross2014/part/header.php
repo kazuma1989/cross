@@ -17,8 +17,14 @@
     <!-- アイコンナビ -->
     <nav id="icon-nav" class="right span-9">
         <ul id="icon-nav-ul" class="ul-horizontal text-left margin-bottom-0">
-            <?php cr_nav_menu('upper-right') ?>
-<!-- 
+            <?php foreach (cr_nav_menu__item_list('upper-right') as $item): ?>
+            <li data-divider="-">
+                <a href="<?= $item->url ?>" target="<?= $item->target ?>">
+                    <?= $item->title ?>
+                </a>
+            </li>
+            <?php endforeach ?>
+            <!-- 
             <li                         ><a href="/recruitment" ><span class="icomoon-quill"></span> 学生・研究員の方へ</a></li>
             <li style="margin-right: 0" ><a href="/contact"     ><span class="icomoon-phone"></span> 連絡先／アクセス</a></li> -->
         </ul>
@@ -29,8 +35,14 @@
 <div id="g-nav-div">
     <nav id="g-nav" class="span-24 center">
         <ul id="g-nav-ul" class="ul-horizontal">
-            <?php cr_nav_menu('header') ?>
-<!-- 
+            <?php foreach (cr_nav_menu__item_list('header') as $item): ?>
+            <li data-divider="-">
+                <a href="<?= $item->url ?>" target="<?= $item->target ?>">
+                    <?= $item->title ?>
+                </a>
+            </li>
+            <?php endforeach ?>
+            <!-- 
             <li><a href="/about/"           data-selected-if-match="^/about/"       >研究室紹介</a></li>
             <li><a href="/research/"        data-selected-if-match="^/research/"    >研究テーマ</a></li>
             <li><a href="/publications/"    data-selected-if-match="^/publications/">業績・著書</a></li>

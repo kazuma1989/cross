@@ -2,13 +2,17 @@
 
 /*
 Theme Name:  Cross2014 (cross.t.u-tokyo.ac.jp)
+Template:    cross
 Author:      kazuma1989 <https://github.com/kazuma1989/>
-Description: …
+Description: 2014 年以前から使われているデザインを WordPress 向けに改修したテーマ
 Version:     1.0.0
 Text Domain: cross2014
 */
 
 /*
+ロゴ部分にはカスタムフォントを使っている。
+フォントファイルのサイズを小さくするため、以下のサイトで、ロゴに使っている文字だけを含んだフォントファイルを作成している。
+
 M+Web FONTS Subsetter
 http://mplus.font-face.jp/
 */
