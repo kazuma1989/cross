@@ -29,7 +29,7 @@ function cr_get_template_type(): string
         return 'home';
     }
     if (is_single()) {
-        return get_the_category()[0]->slug;
+        return get_the_category()[0]->slug ?: '';
     }
     if (is_page()) {
         return 'page';
