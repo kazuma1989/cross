@@ -25,6 +25,7 @@ services:
     # テーマを直接編集するため、ボリュームとして設定する
     # <host>:<container>
     volumes:
+      - ./cross:/var/www/html/wp-content/themes/cross
       - ./cross2014:/var/www/html/wp-content/themes/cross2014
       - ./cross2018:/var/www/html/wp-content/themes/cross2018
 
