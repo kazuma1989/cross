@@ -290,6 +290,7 @@ body {
 
     background-color: DimGray;
     background-image: url('img/bg/linen-dimgray_256x128.jpg');
+    box-shadow: inset 0 5px 10px -5px rgba(0, 0, 0, 0.8)
 }
 
 
