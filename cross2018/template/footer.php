@@ -1,7 +1,7 @@
-<div id="footer-info" class="row span-24 center text-small">
-    <ul class="span-12 ul-horizontal ul-divided">
+<div class="">
+    <ul class="">
         <?php cr_nav_menu('footer') ?>
-<!-- 
+        <!-- 
         <li                 ><a href="/contact">お問い合わせ</a></li>
         <li data-divider="-"><a href="/sitemap">サイトマップ</a></li>
         <li data-divider="-"><a href="/search">検索</a></li>
@@ -9,8 +9,8 @@
     </ul>
 </div>
 
-<div id="footer-external-links">
-    <ul class="span-24 center ul-horizontal text-center">
+<div id="">
+    <ul class="">
         <?php cr_nav_menu('bottom') ?>
     </ul>
 </div>

@@ -2,7 +2,7 @@
 <?php the_post() ?>
 
 <?php if (get_the_title()): ?>
-<h1 id="title">
+<h1 class="mt-4">
     <a href="<?php the_permalink() ?>">
         <?php the_title() ?>
     </a>

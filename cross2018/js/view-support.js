@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let anchorElements = document.getElementsByTagName("a");
-    Array.prototype.forEach.call(anchorElements, a => {
-        let sameLocation = a.href === window.location.href;
-        if (sameLocation) {
+    document.querySelectorAll("a[href]").forEach(a => {
+        let isSameLocation = a.href === window.location.href;
+        if (isSameLocation) {
+            a.classList.add("active");
+        } else if (window.location.href.startsWith(a.href)) {
             a.classList.add("active");
         }
     });
