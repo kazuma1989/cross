@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: サイドバーあり
- * Template Post Type: post, page.
+ * Template Post Type: post, page, news, research, publications, members, album.
  */
 ?>
 <?php get_header() ?>

@@ -1,5 +1,23 @@
 {
     "register_post_type": {
+        "news": {
+            "label": "ニュース",
+            "description": "ニュース",
+            "public": true,
+            "hierarchical": false,
+            "menu_icon": "dashicons-paperclip",
+            "supports": [
+                "title",
+                "editor",
+                "revisions",
+                "excerpt",
+                "thumbnail"
+            ],
+            "taxonomies": [
+                "category",
+                "post_tag"
+            ]
+        },
         "research": {
             "label": "研究テーマ",
             "description": "研究テーマ",
@@ -12,6 +30,10 @@
                 "revisions",
                 "excerpt",
                 "thumbnail"
+            ],
+            "taxonomies": [
+                "category",
+                "post_tag"
             ]
         },
         "publications": {
@@ -19,13 +41,17 @@
             "description": "業績・著書",
             "public": true,
             "hierarchical": false,
-            "menu_icon": "dashicons-carrot",
+            "menu_icon": "dashicons-awards",
             "supports": [
                 "title",
                 "editor",
                 "revisions",
                 "excerpt",
                 "thumbnail"
+            ],
+            "taxonomies": [
+                "category",
+                "post_tag"
             ]
         },
         "members": {
@@ -33,13 +59,17 @@
             "description": "メンバー",
             "public": true,
             "hierarchical": false,
-            "menu_icon": "dashicons-carrot",
+            "menu_icon": "dashicons-id",
             "supports": [
                 "title",
                 "editor",
                 "revisions",
                 "excerpt",
                 "thumbnail"
+            ],
+            "taxonomies": [
+                "category",
+                "post_tag"
             ]
         },
         "album": {
@@ -47,13 +77,17 @@
             "description": "アルバム",
             "public": true,
             "hierarchical": false,
-            "menu_icon": "dashicons-carrot",
+            "menu_icon": "dashicons-camera",
             "supports": [
                 "title",
                 "editor",
                 "revisions",
                 "excerpt",
                 "thumbnail"
+            ],
+            "taxonomies": [
+                "category",
+                "post_tag"
             ]
         }
     },
