@@ -42,3 +42,13 @@ function cr_nav_menu__item_list(string $location): array
 
     return $item_list;
 }
+
+/**
+ * @return WP_Post[]
+ */
+function cr_nav_category__item_list(): array
+{
+    return get_posts([
+        'category' => get_the_category()[0]->cat_ID,
+    ]);
+}
