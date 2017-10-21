@@ -1,0 +1,82 @@
+{
+    "register_post_type": {
+        "research": {
+            "label": "研究テーマ",
+            "description": "研究テーマ",
+            "public": true,
+            "hierarchical": false,
+            "menu_icon": "dashicons-carrot",
+            "supports": [
+                "title",
+                "editor",
+                "revisions",
+                "excerpt",
+                "thumbnail"
+            ]
+        },
+        "publications": {
+            "label": "業績・著書",
+            "description": "業績・著書",
+            "public": true,
+            "hierarchical": false,
+            "menu_icon": "dashicons-carrot",
+            "supports": [
+                "title",
+                "editor",
+                "revisions",
+                "excerpt",
+                "thumbnail"
+            ]
+        },
+        "members": {
+            "label": "メンバー",
+            "description": "メンバー",
+            "public": true,
+            "hierarchical": false,
+            "menu_icon": "dashicons-carrot",
+            "supports": [
+                "title",
+                "editor",
+                "revisions",
+                "excerpt",
+                "thumbnail"
+            ]
+        },
+        "album": {
+            "label": "アルバム",
+            "description": "アルバム",
+            "public": true,
+            "hierarchical": false,
+            "menu_icon": "dashicons-carrot",
+            "supports": [
+                "title",
+                "editor",
+                "revisions",
+                "excerpt",
+                "thumbnail"
+            ]
+        }
+    },
+    "register_nav_menus": {
+        "header": "ヘッダー",
+        "footer": "フッター"
+    },
+    "add_theme_support": {
+        "post-thumbnails": [],
+        "html5": [
+            "search-form",
+            "comment-form",
+            "comment-list",
+            "gallery",
+            "caption"
+        ]
+    },
+    "register_sidebar": [
+        {
+            "id": "main-sidebar",
+            "name": "メインサイドバー",
+            "before_widget": "",
+            "after_widget": ""
+        }
+    ]
+}
