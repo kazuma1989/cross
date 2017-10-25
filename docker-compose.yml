@@ -22,9 +22,13 @@ services:
     ports:
       - 80:80
 
-    # テーマを直接編集するため、ボリュームとして設定する
     # <host>:<container>
     volumes:
+      # 設定値
+      - ./.htaccess:/var/www/html/.htaccess
+      - ./wp-config.php:/var/www/html/wp-config.php
+
+      # テーマを直接編集するため、ボリュームとして設定する
       - ./cross:/var/www/html/wp-content/themes/cross
       - ./cross2014:/var/www/html/wp-content/themes/cross2014
       - ./cross2018:/var/www/html/wp-content/themes/cross2018
@@ -35,15 +39,15 @@ services:
     # さくらインターネットで使えるバージョンに統一
     image: mysql:5.5.57
 
-    # 設定を環境変数として渡す
-    environment:
-      # 管理用 DB 以外に WordPress 用の DB を作成する
-      - MYSQL_DATABASE=wordpress
-
-      # 秘密の値はこのファイルと同じ階層に .env ファイルを作成し
-      # key=value
-      # の形式で記載する
-      - MYSQL_ROOT_PASSWORD
+    # 設定値のうち秘密の値は env ファイルを作成し
+    # key=value
+    # の形式で記載する
+    env_file: mysql.env
+    # 必要な値
+    # MYSQL_ROOT_PASSWORD
+    # MYSQL_DATABASE
+    # MYSQL_USER
+    # MYSQL_PASSWORD
 
     # データ内容を保持する
     volumes:
