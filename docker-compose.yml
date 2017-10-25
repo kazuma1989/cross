@@ -27,6 +27,7 @@ services:
       # 設定値
       - ./.htaccess:/var/www/html/.htaccess
       - ./wp-config.php:/var/www/html/wp-config.php
+      - ./wp-config.env:/var/www/html/wp-config.env
 
       # テーマを直接編集するため、ボリュームとして設定する
       - ./cross:/var/www/html/wp-content/themes/cross
