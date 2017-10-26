@@ -1,3 +1,16 @@
+# URL mappings: old url (already exposed to the public) to new one (actually in use)
+Redirect permanent /album/2007 /album/year-2007
+Redirect permanent /album/2008 /album/year-2008
+Redirect permanent /album/2009 /album/year-2009
+Redirect permanent /album/2010 /album/year-2010
+Redirect permanent /album/2011 /album/year-2011
+Redirect permanent /album/2012 /album/year-2012
+Redirect permanent /album/2013 /album/year-2013
+Redirect permanent /album/2014 /album/year-2014
+Redirect permanent /album/2015 /album/year-2015
+Redirect permanent /album/2016 /album/year-2016
+Redirect permanent /album/2017 /album/year-2017
+
 # BEGIN WordPress
 RewriteEngine On
 RewriteBase /
