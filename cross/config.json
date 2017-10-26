@@ -1,23 +1,5 @@
 {
     "register_post_type": {
-        "news": {
-            "label": "ニュース",
-            "description": "ニュース",
-            "public": true,
-            "hierarchical": false,
-            "menu_icon": "dashicons-paperclip",
-            "supports": [
-                "title",
-                "editor",
-                "revisions",
-                "excerpt",
-                "thumbnail"
-            ],
-            "taxonomies": [
-                "category",
-                "post_tag"
-            ]
-        },
         "research": {
             "label": "研究テーマ",
             "description": "研究テーマ",
@@ -107,8 +89,8 @@
     },
     "register_sidebar": [
         {
-            "id": "main-sidebar",
-            "name": "メインサイドバー",
+            "id": "research",
+            "name": "研究テーマ",
             "before_widget": "",
             "after_widget": ""
         }
