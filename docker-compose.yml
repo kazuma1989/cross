@@ -29,6 +29,9 @@ services:
       - ./wp-config.php:/var/www/html/wp-config.php
       - ./wp-config.env:/var/www/html/wp-config.env
 
+      # プラグイン
+      - ./mu-plugins:/var/www/html/wp-content/mu-plugins
+
       # テーマを直接編集するため、ボリュームとして設定する
       - ./cross:/var/www/html/wp-content/themes/cross
       - ./cross2014:/var/www/html/wp-content/themes/cross2014
