@@ -25,9 +25,9 @@ services:
     # <host>:<container>
     volumes:
       # 設定値
-      - ./.htaccess:/var/www/html/.htaccess
-      - ./wp-config.php:/var/www/html/wp-config.php
-      - ./wp-config.env:/var/www/html/wp-config.env
+      - ./html/.htaccess:/var/www/html/.htaccess
+      - ./html/wp-config.php:/var/www/html/wp-config.php
+      - ./html/wp-config.env:/var/www/html/wp-config.env
 
       # プラグイン
       - ./mu-plugins:/var/www/html/wp-content/mu-plugins
@@ -36,6 +36,9 @@ services:
       - ./cross:/var/www/html/wp-content/themes/cross
       - ./cross2014:/var/www/html/wp-content/themes/cross2014
       - ./cross2018:/var/www/html/wp-content/themes/cross2018
+
+      # 古い静的ページ
+      - ./html/gelsympo2007:/var/www/html/gelsympo2007
 
   # MySQL データベース
   mysql:

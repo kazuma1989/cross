@@ -1,0 +1,4 @@
+## AddDefaultCharset Directive
+# Default charset parameter to be added when a response content-type is text/plain or text/html
+# http://httpd.apache.org/docs/2.2/mod/core.html#adddefaultcharset
+AddDefaultCharset   shift_jis
