@@ -54,7 +54,6 @@ services:
       - ./mu-plugins:/var/www/html/wp-content/mu-plugins
 
       # テーマを直接編集するため、ボリュームとして設定する
-      - ./cross:/var/www/html/wp-content/themes/cross
       - ./cross2014:/var/www/html/wp-content/themes/cross2014
       - ./cross2018:/var/www/html/wp-content/themes/cross2018
 

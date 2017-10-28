@@ -5,25 +5,13 @@ declare(strict_types=1);
 // 設定ファイルを読み込む
 $config_json_filename = 'config.json';
 
-$parent_theme_json = get_template_directory().DIRECTORY_SEPARATOR.$config_json_filename;
-if (file_exists($parent_theme_json)) {
-    $parent_config = json_decode(file_get_contents($parent_theme_json), /* objects will be converted into associative arrays */true);
+if (file_exists($config_json_filename)) {
+    $config = json_decode(file_get_contents($config_json_filename), /* objects will be converted into associative arrays */true);
 } else {
-    $parent_config = [];
+    $config = [];
 }
-
-$current_theme_json = get_stylesheet_directory().DIRECTORY_SEPARATOR.$config_json_filename;
-$child_json_exists = $current_theme_json !== $parent_theme_json && file_exists($current_theme_json);
-if ($child_json_exists) {
-    $current_config = json_decode(file_get_contents($current_theme_json), /* objects will be converted into associative arrays */true);
-} else {
-    $current_config = [];
-}
-
-$config = array_merge_recursive($parent_config, $current_config);
 
 // 読み込んだ内容を使って設定開始
-
 if (is_array($config['register_sidebar'])) {
     add_action('widgets_init', function () use ($config) {
         foreach ($config['register_sidebar'] as $option) {
