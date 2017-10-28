@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 // 設定ファイルを読み込む
-$config_file = __DIR__.DIRECTORY_SEPARATOR.'config.json';
+$config_file = get_stylesheet_directory().DIRECTORY_SEPARATOR.'config.json';
 $config = json_decode(@file_get_contents($config_file) ?: '{}', /* objects will be converted into associative arrays */true);
 
 // 読み込んだ内容を使って設定開始
@@ -31,3 +31,12 @@ if (is_array(@$config['add_theme_support'])) {
         }
     });
 }
+
+// hack
+// Wordpress 管理画面で JSON ファイルも編集できるようにする
+// Wordpress バージョンアップにより不要になる可能性が高い
+add_filter('wp_theme_editor_filetypes', function ($default_types) {
+    $default_types[] = 'json';
+
+    return $default_types;
+});
