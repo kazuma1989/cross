@@ -1,3 +1,9 @@
+<?php 
+/*
+Template Name: サイドバーあり
+Template Post Type: post, page
+*/
+?>
 <?php get_header() ?>
 
 <main id="main">

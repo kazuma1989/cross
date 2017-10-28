@@ -1,10 +1,10 @@
 <div id="body" class="row span-24 center">
     <h1 id="title">
-        <?= get_post_type_object(get_post_type())->labels->name ?>
+        <?= cr_parent__title() ?>
     </h1>
 
     <?php while (have_posts()): the_post() ?>
-    <article class="row span-16">
+    <article class="row span-18">
 
         <h2 class="line-left">
             <a href="<?php the_permalink() ?>">
@@ -17,17 +17,22 @@
     </article>
     <?php endwhile ?>
 
-    <nav id="theme-list" class="span-7 right">
-        <style scoped>
-            #theme-list ol .selected {
-                font-weight: bold;
-            }
-        </style>
+    <nav class="span-5 right">
         <div class="box-radius list-wrapper box-metallic">
-            <?php dynamic_sidebar(get_post_type()) ?>
+            <ul>
+                <?php foreach (cr_nav_sibling__item_list() as $item): ?>
+                <li>
+                    <a href="<?= get_permalink($item) ?>">
+                        <?= $item->post_title ?>
+                    </a>
+                </li>
+                <?php endforeach ?>
+            </ul>
 
-            <p class="list-item text-right">
-                <a class="arrow-left-before" href="./"><?= get_post_type_object(get_post_type())->labels->name ?> トップ</a>
+            <p class="text-right">
+                <a class="arrow-left-before" href="./">
+                    <?= cr_parent__title() ?> トップ
+                </a>
             </p>
         </div>
     </nav>

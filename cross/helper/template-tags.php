@@ -46,9 +46,17 @@ function cr_nav_menu__item_list(string $location): array
 /**
  * @return WP_Post[]
  */
-function cr_nav_category__item_list(): array
+function cr_nav_sibling__item_list(): array
 {
-    return get_posts([
-        'category' => get_the_category()[0]->cat_ID,
+    return get_pages([
+        'child_of' => $GLOBALS['post']->post_parent,
     ]);
+}
+
+/**
+ * @return parent page title
+ */
+function cr_parent__title(): string
+{
+    return get_post($GLOBALS['post']->post_parent)->post_title;
 }
