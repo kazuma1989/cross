@@ -10,7 +10,7 @@ declare(strict_types=1);
 function cr_nav_menu__item_list(string $location): array
 {
     // Get non-nested menu items which WordPress gives.
-    $menu_id = get_nav_menu_locations()[$location];
+    $menu_id = @get_nav_menu_locations()[$location];
     $raw_item_list = wp_get_nav_menu_items($menu_id, [
         'update_post_term_cache' => false,
     ]) ?: [];

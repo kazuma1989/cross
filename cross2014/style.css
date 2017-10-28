@@ -18,12 +18,12 @@ http://mplus.font-face.jp/
 
 @font-face {
     font-family: "M+ 1c bold";
-    src: url("css/font/mplus-1c-bold-sub.woff") format("woff");
+    src: url("asset/font/mplus/mplus-1c-bold-sub.woff") format("woff");
 }
 
 @font-face {
     font-family: "M+ 1c light";
-    src: url("css/font/mplus-1c-light-sub.woff") format("woff");
+    src: url("asset/font/mplus/mplus-1c-light-sub.woff") format("woff");
 }
 
 .cr_site_logo {
