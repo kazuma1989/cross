@@ -1,7 +1,4 @@
 <?php
-
-$config = parse_ini_file('wp-config.env');
-
 /*
  * The base configuration for WordPress.
  *
@@ -21,16 +18,16 @@ $config = parse_ini_file('wp-config.env');
 
 // ** MySQL settings - You can get this info from your web host ** //
 /* The name of the database for WordPress */
-define('DB_NAME', $config['DB_NAME']);
+define('DB_NAME', getenv('DB_NAME'));
 
 /* MySQL database username */
-define('DB_USER', $config['DB_USER']);
+define('DB_USER', getenv('DB_USER'));
 
 /* MySQL database password */
-define('DB_PASSWORD', $config['DB_PASSWORD']);
+define('DB_PASSWORD', getenv('DB_PASSWORD'));
 
 /* MySQL hostname */
-define('DB_HOST', $config['DB_HOST']);
+define('DB_HOST', getenv('DB_HOST'));
 
 /* Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
@@ -47,14 +44,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY', $config['AUTH_KEY']);
-define('SECURE_AUTH_KEY', $config['SECURE_AUTH_KEY']);
-define('LOGGED_IN_KEY', $config['LOGGED_IN_KEY']);
-define('NONCE_KEY', $config['NONCE_KEY']);
-define('AUTH_SALT', $config['AUTH_SALT']);
-define('SECURE_AUTH_SALT', $config['SECURE_AUTH_SALT']);
-define('LOGGED_IN_SALT', $config['LOGGED_IN_SALT']);
-define('NONCE_SALT', $config['NONCE_SALT']);
+define('AUTH_KEY', getenv('AUTH_KEY'));
+define('SECURE_AUTH_KEY', getenv('SECURE_AUTH_KEY'));
+define('LOGGED_IN_KEY', getenv('LOGGED_IN_KEY'));
+define('NONCE_KEY', getenv('NONCE_KEY'));
+define('AUTH_SALT', getenv('AUTH_SALT'));
+define('SECURE_AUTH_SALT', getenv('SECURE_AUTH_SALT'));
+define('LOGGED_IN_SALT', getenv('LOGGED_IN_SALT'));
+define('NONCE_SALT', getenv('NONCE_SALT'));
 
 /**#@-*/
 
@@ -78,14 +75,14 @@ $table_prefix = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', $config['WP_DEBUG'] || false);
-define('WP_DEBUG_LOG', $config['WP_DEBUG_LOG'] || false);
-define('WP_DEBUG_DISPLAY', $config['WP_DEBUG_DISPLAY'] || false);
+define('WP_DEBUG', (bool) getenv('WP_DEBUG'));
+define('WP_DEBUG_LOG', (bool) getenv('WP_DEBUG_LOG'));
+define('WP_DEBUG_DISPLAY', (bool) getenv('WP_DEBUG_DISPLAY'));
 
 define('WP_ALLOW_MULTISITE', true);
 define('MULTISITE', true);
 define('SUBDOMAIN_INSTALL', false);
-define('DOMAIN_CURRENT_SITE', $config['DOMAIN_CURRENT_SITE']);
+define('DOMAIN_CURRENT_SITE', getenv('DOMAIN_CURRENT_SITE'));
 define('PATH_CURRENT_SITE', '/');
 define('SITE_ID_CURRENT_SITE', 1);
 define('BLOG_ID_CURRENT_SITE', 1);
