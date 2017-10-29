@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
 Template Name: タイトルなし
 Template Post Type: post, page

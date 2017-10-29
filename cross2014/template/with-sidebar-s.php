@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: サイドバーあり
+Template Name: サイドバー（幅小さめ）あり
 Template Post Type: post, page
 */
 ?>
@@ -11,7 +11,7 @@ Template Post Type: post, page
 </h1>
 
 <?php while (have_posts()): the_post() ?>
-<article class="row span-16">
+<article class="row span-18">
 
     <h2 class="line-left">
         <a href="<?php the_permalink() ?>">
@@ -24,7 +24,7 @@ Template Post Type: post, page
 </article>
 <?php endwhile ?>
 
-<nav class="span-7 right">
+<nav class="span-5 right">
     <div class="box-radius list-wrapper box-metallic">
         <ul>
             <?php foreach (cr_nav_sibling__item_list() as $item): ?>

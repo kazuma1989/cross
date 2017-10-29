@@ -339,6 +339,9 @@ a[href] .a-description {
 .text-bold {
     font-weight: bold;
 }
+.text-selected-bold.selected {
+    font-weight: bold;
+}
 .text-normal-weight {
     font-weight: normal;
 }
