@@ -20,11 +20,15 @@ add_filter('manage_pages_columns', function ($posts_columns) {
 
     return $posts_columns;
 });
-
 add_action('manage_pages_custom_column', function ($column_name, $post_id) {
+    static $page_templates;
+    if (empty($page_templates)) {
+        $page_templates = wp_get_theme()->get_post_templates()['page'];
+    }
+
     if ($column_name === '_wp_page_template') {
-        // TODO ファイル名ではなく（ファイル内で定義した）テンプレート名を表示するほうがユーザーフレンドリー
-        echo get_post_meta($post_id, '_wp_page_template', /* single */true);
+        $template_path = get_post_meta($post_id, '_wp_page_template', /* single */true);
+        echo @$page_templates[$template_path];
     }
 }, 10, 2);
 

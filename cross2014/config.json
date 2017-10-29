@@ -3,7 +3,7 @@
         "header": "ヘッダー",
         "footer": "フッター",
         "upper-right": "右上",
-        "bottom": "下"
+        "bottom": "一番下の帯"
     },
     "add_theme_support": {
         "post-thumbnails": [],
