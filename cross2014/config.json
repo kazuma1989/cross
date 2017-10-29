@@ -6,7 +6,10 @@
         "bottom": "一番下の帯"
     },
     "add_theme_support": {
-        "post-thumbnails": [],
+        "post-thumbnails": [
+            "post",
+            "page"
+        ],
         "html5": [
             "search-form",
             "comment-form",

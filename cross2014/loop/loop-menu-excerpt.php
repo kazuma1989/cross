@@ -1,4 +1,4 @@
-<ul id="theme-list" class="ol-separate span-14">
+<ul class="ol-separate span-14">
     <?php while (have_posts()): the_post() ?>
     <li>
         <a class="a-block" href="<?php the_permalink() ?>">
