@@ -64,3 +64,9 @@ http://mplus.font-face.jp/
     position: relative;
     z-index: 10;
 }
+
+.widget-title {
+    /* .line-left */
+    border-left: solid 5px Gray;
+    padding-left: 7px;
+}
