@@ -43,11 +43,11 @@ services:
       - ./html/wp-config.php:/var/www/html/wp-config.php
 
       # プラグイン
-      - ./mu-plugins:/var/www/html/wp-content/mu-plugins
+      - ./html/wp-content/mu-plugins:/var/www/html/wp-content/mu-plugins
 
       # テーマを直接編集するため、ボリュームとして設定する
-      - ./cross2014:/var/www/html/wp-content/themes/cross2014
-      - ./cross2018:/var/www/html/wp-content/themes/cross2018
+      - ./html/wp-content/themes/cross2014:/var/www/html/wp-content/themes/cross2014
+      - ./html/wp-content/themes/cross2018:/var/www/html/wp-content/themes/cross2018
 
       # 古い静的ページ
       - ./html/gelsympo2007:/var/www/html/gelsympo2007
