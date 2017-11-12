@@ -10,6 +10,12 @@
         }
     ],
     "scripts": {
+        "serve": "docker-compose up -d",
+        "serve-stop": "docker-compose stop",
+        "serve-clean": [
+            "@serve-stop",
+            "docker-compose rm -f"
+        ],
         "setup": [
             "@php -r \"if (!file_exists('mysql.env'    )) copy('mysql.env.sample'    , 'mysql.env'    );\"",
             "@php -r \"if (!file_exists('wp-config.env')) copy('wp-config.env.sample', 'wp-config.env');\"",
@@ -18,12 +24,8 @@
             "docker exec -u www-data wordpress wp plugin install --activate-network so-widgets-bundle",
             "docker exec -u www-data wordpress wp plugin install --activate-network really-simple-csv-importer"
         ],
-        "serve": "docker-compose up -d",
-        "serve-stop": "docker-compose stop",
-        "serve-clean": [
-            "@serve-stop",
-            "docker-compose rm -f"
-        ]
+        "dump-ddl": "docker exec mysql sh -c 'mysqldump --skip-comments -u ${MYSQL_USER} -p${MYSQL_PASSWORD} ${MYSQL_DATABASE} -d -n' > data/01_dump-ddl.sql",
+        "dump-data": "docker exec mysql sh -c 'mysqldump --skip-comments -u ${MYSQL_USER} -p${MYSQL_PASSWORD} ${MYSQL_DATABASE} -t -n' > data/02_dump-data.sql"
     },
     "require": {}
 }

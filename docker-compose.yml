@@ -42,12 +42,9 @@ services:
     volumes:
       # 設定値
       - ./html/.htaccess:/var/www/html/.htaccess
-      - ./html/wp-config.php:/var/www/html/wp-config.php
 
-      # プラグイン
+      # Must Use プラグイン、テーマを直接編集するため、ボリュームとして設定する
       - ./html/wp-content/mu-plugins:/var/www/html/wp-content/mu-plugins
-
-      # テーマを直接編集するため、ボリュームとして設定する
       - ./html/wp-content/themes/cross2014:/var/www/html/wp-content/themes/cross2014
       - ./html/wp-content/themes/cross2018:/var/www/html/wp-content/themes/cross2018
 
@@ -61,7 +58,7 @@ services:
   mysql:
     # 公式イメージを使う
     # さくらインターネットで使えるバージョンに統一
-    image: mysql:5.5.57
+    image: mysql:5.5.58
 
     # 外部からコマンドを発行しやすいようにコンテナ名を固定
     container_name: mysql
@@ -72,8 +69,12 @@ services:
     env_file:
       - mysql.env
 
-    # データ内容を保持する
+    # <host>:<container>
     volumes:
+      # このフォルダー内の *.sql ファイルを初期データとして適用する
+      - ./data:/docker-entrypoint-initdb.d
+
+      # データ内容を保持する
       - ./volume/mysql:/var/lib/mysql
 
   # データベース管理画面
