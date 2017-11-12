@@ -10,9 +10,18 @@
         }
     ],
     "scripts": {
+        "setup": [
+            "@serve",
+            "docker exec -u www-data wordpress wp plugin install --activate-network siteorigin-panels",
+            "docker exec -u www-data wordpress wp plugin install --activate-network so-widgets-bundle",
+            "docker exec -u www-data wordpress wp plugin install --activate-network really-simple-csv-importer"
+        ],
         "serve": "docker-compose up -d",
         "serve-stop": "docker-compose stop",
-        "serve-clean": "docker-compose rm -f"
+        "serve-clean": [
+            "@serve-stop",
+            "docker-compose rm -f"
+        ]
     },
     "require": {}
 }

@@ -2,8 +2,7 @@
 *.env
 
 # 各端末でコンテナ内のデータを永続化するためなので Git 管理外
-/wordpress
-/mysql
+/volume/
 
 # composer によるインストール先
 /vendor/

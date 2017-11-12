@@ -6,9 +6,11 @@ services:
 
   # WordPress（CMS 本体）
   wordpress:
-    # 公式イメージを使う
-    # さくらインターネットで使えるバージョンに統一
-    image: wordpress:4.8.3-php7.1-apache
+    # 公式イメージをベースにビルド
+    build: ./wordpress
+
+    # 外部からコマンドを発行しやすいようにコンテナ名を固定
+    container_name: wordpress
 
     # データベースとリンクする
     # db というホスト名で接続できる
@@ -53,13 +55,16 @@ services:
       - ./html/gelsympo2007:/var/www/html/gelsympo2007
 
       # ダウンロードしたアップデートやプラグインを永続化する
-      - ./wordpress:/var/www/html
+      - ./volume/wordpress:/var/www/html
 
   # MySQL データベース
   mysql:
     # 公式イメージを使う
     # さくらインターネットで使えるバージョンに統一
     image: mysql:5.5.57
+
+    # 外部からコマンドを発行しやすいようにコンテナ名を固定
+    container_name: mysql
 
     # 設定値のうち秘密の値は env ファイルを作成し
     # key=value
@@ -69,7 +74,7 @@ services:
 
     # データ内容を保持する
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ./volume/mysql:/var/lib/mysql
 
   # データベース管理画面
   # 通常時は使わないが、特殊なメンテナンスやデータ移行時に使う
