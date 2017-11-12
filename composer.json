@@ -11,6 +11,8 @@
     ],
     "scripts": {
         "setup": [
+            "@php -r \"if (!file_exists('mysql.env'    )) copy('mysql.env.sample'    , 'mysql.env'    );\"",
+            "@php -r \"if (!file_exists('wp-config.env')) copy('wp-config.env.sample', 'wp-config.env');\"",
             "@serve",
             "docker exec -u www-data wordpress wp plugin install --activate-network siteorigin-panels",
             "docker exec -u www-data wordpress wp plugin install --activate-network so-widgets-bundle",
