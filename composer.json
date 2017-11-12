@@ -20,9 +20,15 @@
             "@php -r \"if (!file_exists('mysql.env'    )) copy('mysql.env.sample'    , 'mysql.env'    );\"",
             "@php -r \"if (!file_exists('wp-config.env')) copy('wp-config.env.sample', 'wp-config.env');\"",
             "@serve",
+            "@php -r 'sleep(30);'",
+            "docker exec -u www-data wordpress sh -c 'wp config create --skip-check --dbname=${MYSQL_DATABASE} --dbuser=${MYSQL_USER} --dbpass=${MYSQL_PASSWORD} --dbhost=${DB_HOST}'",
             "docker exec -u www-data wordpress wp plugin install --activate-network siteorigin-panels",
             "docker exec -u www-data wordpress wp plugin install --activate-network so-widgets-bundle",
             "docker exec -u www-data wordpress wp plugin install --activate-network really-simple-csv-importer"
+        ],
+        "dump": [
+            "@dump-ddl",
+            "@dump-data"
         ],
         "dump-ddl": "docker exec mysql sh -c 'mysqldump --skip-comments -u ${MYSQL_USER} -p${MYSQL_PASSWORD} ${MYSQL_DATABASE} -d -n' > data/01_dump-ddl.sql",
         "dump-data": "docker exec mysql sh -c 'mysqldump --skip-comments -u ${MYSQL_USER} -p${MYSQL_PASSWORD} ${MYSQL_DATABASE} -t -n' > data/02_dump-data.sql"
