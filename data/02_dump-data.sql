@@ -38,7 +38,6 @@ UNLOCK TABLES;
 
 LOCK TABLES `wp_posts` WRITE;
 /*!40000 ALTER TABLE `wp_posts` DISABLE KEYS */;
-INSERT INTO `wp_posts` VALUES (3,1,'2017-11-12 20:20:54','0000-00-00 00:00:00','','自動下書き','','auto-draft','open','open','','','','','2017-11-12 20:20:54','0000-00-00 00:00:00','',0,'http://localhost/?p=3',0,'post','',0);
 /*!40000 ALTER TABLE `wp_posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
