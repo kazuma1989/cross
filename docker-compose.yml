@@ -8,7 +8,7 @@ services:
   wordpress:
     # 公式イメージを使う
     # さくらインターネットで使えるバージョンに統一
-    image: wordpress:4.8.2-php7.1-apache
+    image: wordpress:4.8.3-php7.1-apache
 
     # データベースとリンクする
     # db というホスト名で接続できる
@@ -25,24 +25,16 @@ services:
     # 設定値のうち秘密の値は env ファイルを作成し
     # key=value
     # の形式で記載する
-    env_file: wp-config.env
-    # 必要な値
-    # DB_NAME
-    # DB_USER
-    # DB_PASSWORD
-    # DB_HOST
-    # DOMAIN_CURRENT_SITE
-    # AUTH_KEY
-    # SECURE_AUTH_KEY
-    # LOGGED_IN_KEY
-    # NONCE_KEY
-    # AUTH_SALT
-    # SECURE_AUTH_SALT
-    # LOGGED_IN_SALT
-    # NONCE_SALT
-    # WP_DEBUG
-    # WP_DEBUG_LOG
-    # WP_DEBUG_DISPLAY
+    env_file:
+      - mysql.env
+      - wp-config.env
+
+    # 本番環境と異なる設定値のうち、秘密ではないもの
+    environment:
+      - DB_HOST=db
+      - WP_DEBUG=1
+      - WP_DEBUG_LOG=1
+      - WP_DEBUG_DISPLAY=0
 
     # <host>:<container>
     volumes:
@@ -72,12 +64,8 @@ services:
     # 設定値のうち秘密の値は env ファイルを作成し
     # key=value
     # の形式で記載する
-    env_file: mysql.env
-    # 必要な値
-    # MYSQL_ROOT_PASSWORD
-    # MYSQL_DATABASE
-    # MYSQL_USER
-    # MYSQL_PASSWORD
+    env_file:
+      - mysql.env
 
     # データ内容を保持する
     volumes:
