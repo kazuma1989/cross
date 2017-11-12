@@ -9,9 +9,19 @@ Author URI:  https://github.com/kazuma1989
 
 declare(strict_types=1);
 
-// 固定ページでカテゴリーを使えるようにする。ただし、カテゴリー検索時に固定ページは対象にはならない
+// メディアと固定ページでカテゴリーを使えるようにする
+// ただし、カテゴリー検索時の対象にはならない
 add_action('init', function () {
     register_taxonomy_for_object_type('category', 'page');
+    register_taxonomy_for_object_type('category', 'attachment');
+});
+add_action('restrict_manage_posts', function ($post_type) {
+    if ($post_type === 'attachment') {
+        wp_dropdown_categories([
+            'show_option_all' => __('All Categories'),
+            'orderby' => 'name',
+        ]);
+    }
 });
 
 // 固定ページ一覧に「テンプレート」の列を表示する
